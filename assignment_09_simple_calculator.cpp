@@ -73,3 +73,78 @@
 #include <cmath>
 using namespace std;
 
+double add(double a, double b) {
+    return a + b;
+}
+double subtract(double a, double b) {
+    return a - b;
+}
+double multiply(double a, double b) {
+    return a * b;
+}
+double divide(double a, double b) {
+    return a / b;
+}
+int mod(int a, int b) {
+    return a % b;
+}
+double power(double a, double b) {
+    return pow(a, b);
+}
+int main(){
+    int choice;
+    double a, b;
+    do {
+        cout << "\n1. Addition" << endl;
+        cout << "\n2. Subtraction" << endl;
+        cout << "\n3. Multiplication" << endl;
+        cout << "\n4. Division" << endl;
+        cout << "\n5. Modulus" << endl;
+        cout << "\n6. Exponentiation" << endl;
+        cout << "\n7. Quit" << endl;
+        cout << "Select an operation (1-7): ";
+        cin >> choice;
+
+        if (choice == 7) {
+    cout << "Goodbye!" << endl;
+    break;
+}
+    if(choice < 1 || choice > 7) {
+        cout << "Invalid choice. Please select a number between 1 and 7." << endl;
+        continue;
+    }
+    cout << "Enter first number: ";
+    cin >> a;
+    cout << "Enter second number: ";
+    cin >> b;
+    cout << fixed << setprecision(2);
+
+    if (choice == 1) {
+        cout << "Result: " << a << " + " << b << " = " << add(a, b) << endl;
+    } else if (choice == 2) {
+        cout << "Result: " << a << " - " << b << " = " << subtract(a, b) << endl;
+    } else if (choice == 3) {
+        cout << "Result: " << a << " * " << b << " = " << multiply(a, b) << endl;
+    } else if (choice == 4) {
+        if (b == 0) {
+            cout << "Error: Cannot divide by zero." << endl;
+        } else {
+            cout << "Result: " << a << " / " << b << " = " << divide(a, b) << endl;
+        }
+    } else if (choice == 5) {
+        if (static_cast<int>(b) == 0) {
+            cout << "Error: Cannot perform modulus by zero." << endl;
+        } else {
+            cout << "Result: " << static_cast<int>(a) << " % " << static_cast<int>(b) 
+                 << " = " << mod(static_cast<int>(a), static_cast<int>(b)) << endl;
+        }
+    } else if (choice == 6) {
+        cout << "Result: " << a << "^" << b << " = " << power(a, b) << endl;
+    }while (true);
+    if (choice == 7) {
+        cout << "Goodbye!" << endl;
+        break;
+    }
+    } while (true);
+    return 0;
+} 
