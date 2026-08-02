@@ -57,3 +57,37 @@
 #include <iostream>
 using namespace std;
 
+void singleTable(int number) {
+    for (int i = 1; i <= 12; ++i) {
+        std::cout << number << " x " << i << " = " << number * i << std::endl;
+    }
+}
+void tablesTon(int n)
+{
+    if (n <= 0)
+    {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+    for (int i = 1; i <= n; ++i) {
+        singleTable(i);
+        cout << "--------------------" << endl;
+    }
+}
+int main()
+{
+    int n;
+    cout << "Enter a number:  ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: N must be a positive integer." << endl;
+        return 1;
+    }
+    singleTable(n);
+    int number;
+    cout << "Enter a number:  ";
+    cin >> number;
+    tablesTon(number);
+    return 0;
+}
